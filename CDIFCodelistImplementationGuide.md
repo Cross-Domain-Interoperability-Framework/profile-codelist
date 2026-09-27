@@ -154,7 +154,7 @@ The root object representing the codelist or classification scheme.
 
 - **Cardinality:** Optional
 - **Content:** [schema:Dataset](#schemadataset-the-catalog-record)
-- **Description:** The catalog record describing this codelist as CDIF-conformant metadata. This is the only place profile conformance is declared. Optional on the scheme, but when present its own `@type`, `schema:additionalType` and `dcterms:conformsTo` are all required — see [schema:Dataset](#schemadataset-the-catalog-record).
+- **Description:** used with schema:additionalType = dcat:CatalogRecord to specify properties of the metadata object, distinct from the resource is describes.
 
 ## CdifCodelistConcept
 
@@ -196,7 +196,7 @@ The profile assigns this class **no `@type` property**. Nothing in the schema re
 
 - **Cardinality:** Required
 - **Content:** string
-- **Description:** The classification code for this concept within the scheme — the machine-facing value that data records carry. A single string, not an array. Codes should be unique within the scheme. This property is what distinguishes a codelist concept from a general vocabulary concept, and it is required on every concept.
+- **Description:** Classification code for this concept within a scheme.
 
 ### skos:definition
 
@@ -246,7 +246,7 @@ The record is typed `schema:Dataset` and marked as a catalog record through `sch
 
 - **Cardinality:** Required, Repeatable
 - **Content:** array of string or [object reference](#object-reference), at least one
-- **Description:** Must contain the object reference `{"@id": "dcat:CatalogRecord"}`, which is what marks this node as the metadata record rather than as the described resource. The bare string `"dcat:CatalogRecord"` satisfies the item schema but **not** the `contains` constraint, which requires the `{"@id": ...}` object form. Tooling that reads `schema:additionalType` as a string literal will not recognize the record.
+- **Description:** schema.org property used to assign other type names or identifiers to extend the rdf @type for semantic purposes, without adding property requirements on the object from those types
 
 ### dcterms:conformsTo
 
@@ -258,7 +258,7 @@ The record is typed `schema:Dataset` and marked as a catalog record through `sch
 
 - **Cardinality:** Optional
 - **Content:** [object reference](#object-reference)
-- **Description:** The resource this record describes, normally the codelist's own `@id`.
+- **Description:** an object reference to the JSON object/graph node that a subjectOf.Dataset[additionalProperty = dcat:CatalogRecord] describes
 
 The record's `@type` is required and must contain `schema:Dataset`. Its `@id` is optional, and is distinct from the codelist's own `@id` — the record and the thing it describes are different resources.
 

@@ -24,7 +24,8 @@ cdifd:CDIFCodelistConceptShape a sh:NodeShape ;
             sh:message "skos:prefLabel is required on every concept." ;
             sh:minCount 1 ;
             sh:path skos:prefLabel ] ;
-    sh:targetClass skos:Concept .
+    sh:targetObjectsOf skos:hasTopConcept,
+        skos:narrower .
 
 cdifd:CDIFCodelistConformsToShape a sh:NodeShape ;
     sh:property [ a sh:PropertyShape ;

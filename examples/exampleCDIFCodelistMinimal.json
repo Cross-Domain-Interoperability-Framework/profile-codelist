@@ -144,7 +144,7 @@
     ],
     "dcterms:conformsTo": [
       {
-        "@id": "https://w3id.org/cdif/codelist/1.1"
+        "@id": "https://w3id.org/cdif/codelist/2.0"
       }
     ],
     "schema:about": {

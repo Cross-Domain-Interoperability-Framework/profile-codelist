@@ -308,7 +308,7 @@
             "additionalProperties": false,
             "properties": {
               "@id": {
-                "const": "https://w3id.org/cdif/codelist/1.1"
+                "const": "https://w3id.org/cdif/codelist/2.0"
               }
             }
           },

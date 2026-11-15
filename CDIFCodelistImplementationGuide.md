@@ -229,7 +229,7 @@ The value of [`schema:subjectOf`](#schemasubjectof): a catalog record describing
 |-|-|-|
 |`@type`|**Required**, repeatable|array of string containing `schema:Dataset`|
 |`schema:additionalType`|**Required**, repeatable|array containing `{"@id": "dcat:CatalogRecord"}`|
-|`dcterms:conformsTo`|**Required**, repeatable|array containing `{"@id": "https://w3id.org/cdif/codelist/1.1"}`|
+|`dcterms:conformsTo`|**Required**, repeatable|array containing `{"@id": "https://w3id.org/cdif/codelist/2.0"}`|
 |`@id`|Optional|string|
 |`schema:about`|Optional|object reference|
 
@@ -238,7 +238,7 @@ The value of [`schema:subjectOf`](#schemasubjectof): a catalog record describing
   "@id": "https://example.org/vocab/myCodelist/record",
   "@type": \["schema:Dataset"],
   "schema:additionalType": \[{"@id": "dcat:CatalogRecord"}],
-  "dcterms:conformsTo": \[{"@id": "https://w3id.org/cdif/codelist/1.1"}],
+  "dcterms:conformsTo": \[{"@id": "https://w3id.org/cdif/codelist/2.0"}],
   "schema:about": {"@id": "https://example.org/vocab/myCodelist"}
 }
 ```
@@ -253,7 +253,7 @@ The value of [`schema:subjectOf`](#schemasubjectof): a catalog record describing
 
 * **Cardinality:** Required, Repeatable
 * **Content:** array of [object reference](#object-reference), at least one
-* **Description:** Must contain `{"@id": "https://w3id.org/cdif/codelist/1.1"}`. This is the record's claim to conform to this profile. Each item is a sealed `{@id}` reference; a bare string is not accepted.
+* **Description:** Must contain `{"@id": "https://w3id.org/cdif/codelist/2.0"}`. This is the record's claim to conform to this profile. Each item is a sealed `{@id}` reference; a bare string is not accepted.
 
 ### schema:about
 
